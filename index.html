@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elite Celebration | Creative Event Planning in Hassan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#240b36;--wine:#5a1744;--rose:#b4436c;--gold:#d9a94e;--gold2:#f3d98f;--ivory:#fbf3e4;--ink:#f6ead6;
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--plum);line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);transition:background .4s,box-shadow .4s}
+header.solid{background:rgba(36,11,54,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(217,169,78,.3)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--serif);font-size:1.7rem;font-weight:600;letter-spacing:.04em;color:var(--gold2)}
+.logo small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.38em;color:var(--ink);opacity:.7;margin-top:-4px}
+nav ul{display:flex;gap:34px;list-style:none;padding:0}
+nav a{font-size:.9rem;letter-spacing:.08em;position:relative;padding:6px 0}
+nav a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .35s}
+nav a:hover:after{width:100%}
+.btn{display:inline-block;padding:14px 34px;border:1px solid var(--gold);background:linear-gradient(120deg,var(--gold),var(--gold2));color:var(--plum);font-weight:500;letter-spacing:.08em;font-family:var(--sans);font-size:.92rem;cursor:pointer;border-radius:2px;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(217,169,78,.35)}
+.btn.ghost{background:transparent;color:var(--gold2)}
+.burger{display:none;background:none;border:0;color:var(--gold2);font-size:1.8rem;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;text-align:center;overflow:hidden;
+background:radial-gradient(ellipse at 50% 20%,#7a2457 0%,#4a1240 38%,var(--plum) 75%)}
+#sparkle{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;padding-top:100px;padding-bottom:60px}
+.hero h1{font-size:clamp(3rem,9vw,7rem);color:var(--ivory);letter-spacing:.01em}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotate(2deg);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p{max-width:560px;margin:26px auto 40px;font-size:1.12rem;opacity:0;animation:rise 1s .9s forwards}
+.hero .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1s 1.15s forwards}
+.frame{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 28px}
+
+/* sections */
+section{padding:110px 0}
+.title{text-align:center;margin-bottom:60px}
+.title h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--ivory)}
+.title p{max-width:520px;margin:14px auto 0;opacity:.8}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+
+/* about */
+#about{background:linear-gradient(180deg,var(--plum),#33103f)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about h2{font-size:clamp(2.2rem,4.5vw,3.4rem);color:var(--ivory);margin-bottom:22px}
+.about p{margin-bottom:18px;font-size:1.05rem;opacity:.9}
+.stats{display:flex;gap:36px;margin-top:30px;flex-wrap:wrap}
+.stats b{display:block;font-family:var(--serif);font-size:2.6rem;color:var(--gold2);font-weight:500;line-height:1}
+.stats span{font-size:.85rem;opacity:.75}
+.art{position:relative;aspect-ratio:4/5;border-radius:200px 200px 6px 6px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.art svg{width:100%;height:100%;display:block}
+
+/* services */
+#services{background:#33103f}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{padding:38px 30px;border:1px solid rgba(217,169,78,.35);background:linear-gradient(160deg,rgba(180,67,108,.18),rgba(36,11,54,.4));border-radius:4px;transition:transform .4s,border-color .4s}
+.card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.card h3{font-size:1.8rem;color:var(--gold2);margin:14px 0 8px}
+.card p{opacity:.85;font-size:.98rem}
+.card svg{width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.4}
+
+/* gallery */
+#gallery{background:linear-gradient(180deg,#33103f,var(--wine))}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:16px}
+.gal figure{position:relative;overflow:hidden;border-radius:4px;border:1px solid rgba(217,169,78,.4);cursor:pointer}
+.gal figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal figure:nth-child(4){grid-column:span 2}
+.gal svg{width:100%;height:100%;display:block;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover svg{transform:scale(1.1)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 16px;font-family:var(--serif);font-size:1.5rem;color:var(--ivory);background:linear-gradient(transparent,rgba(36,11,54,.9));transform:translateY(100%);transition:transform .5s}
+.gal figure:hover figcaption,.gal figure:focus-visible figcaption{transform:none}
+
+/* contact */
+#contact{background:radial-gradient(ellipse at 80% 0%,#6b1d50,var(--plum) 70%)}
+.contact{display:grid;grid-template-columns:1fr 1.15fr;gap:60px}
+.info h2{font-size:clamp(2.2rem,4.5vw,3.3rem);color:var(--ivory);margin-bottom:20px}
+.info p{opacity:.85;margin-bottom:30px}
+.row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.row i{flex:none;width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-style:normal}
+.row b{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--gold2);font-weight:500}
+form{padding:42px;border:1px solid rgba(217,169,78,.45);background:rgba(251,243,228,.05);border-radius:4px;backdrop-filter:blur(6px)}
+.f{margin-bottom:22px}
+label{display:block;font-size:.85rem;letter-spacing:.06em;margin-bottom:6px;color:var(--gold2)}
+input,select,textarea{width:100%;padding:13px 14px;background:rgba(36,11,54,.6);border:1px solid rgba(217,169,78,.4);color:var(--ivory);font:inherit;border-radius:2px;transition:border-color .3s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(217,169,78,.2)}
+select option{background:var(--plum)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.err{color:#ffb3c6;font-size:.8rem;min-height:1.2em;display:block}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok h3{font-size:2.2rem;color:var(--gold2);margin-bottom:8px}
+form.sent .fields{display:none}form.sent .ok{display:block;animation:rise .8s forwards}
+
+/* footer */
+footer{background:#170623;border-top:1px solid rgba(217,169,78,.4);padding:60px 0 30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+footer p,footer li{opacity:.75;font-size:.95rem}
+footer ul{list-style:none;padding:0}
+footer h4{font-family:var(--serif);font-size:1.4rem;color:var(--gold2);font-weight:500;margin-bottom:12px}
+footer a:hover{color:var(--gold2)}
+.copy{border-top:1px solid rgba(251,243,228,.12);padding-top:22px;text-align:center;font-size:.85rem;opacity:.6}
+
+@media(max-width:860px){
+ .burger{display:block}
+ nav{position:absolute;top:72px;left:0;right:0;background:rgba(36,11,54,.97);max-height:0;overflow:hidden;transition:max-height .5s}
+ nav.open{max-height:360px}
+ nav ul{flex-direction:column;gap:0;padding:12px 24px 24px}nav li{padding:10px 0}
+ .about,.contact,.foot{grid-template-columns:1fr}
+ .grid3{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+ .gal figure:nth-child(1){grid-column:span 2}
+ .two{grid-template-columns:1fr}form{padding:26px}
+ section{padding:80px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="top">
+ <div class="wrap nav">
+  <a href="#" class="logo">Elite Celebration<small>EVENT PLANNERS</small></a>
+  <button class="burger" aria-label="Open menu" id="burger">&#9776;</button>
+  <nav id="menu"><ul>
+   <li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+   <li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+  </ul></nav>
+ </div>
+</header>
+
+<main>
+<div class="hero">
+ <canvas id="sparkle" aria-hidden="true"></canvas>
+ <div class="wrap">
+  <div class="frame"></div>
+  <h1 id="heroTitle">Moments made<br><em>unforgettable</em></h1>
+  <p>Weddings, receptions, birthdays and gatherings designed with imagination and delivered without a single detail missed.</p>
+  <div class="cta"><a href="#contact" class="btn">Plan your event</a><a href="#gallery" class="btn ghost">See our work</a></div>
+ </div>
+</div>
+
+<section id="about">
+ <div class="wrap about">
+  <div class="reveal">
+   <h2>A creative team behind every celebration</h2>
+   <p>Elite Celebration is a creative event planning studio based in Hassan. We turn your ideas into occasions that feel personal, polished and effortless for you and your guests.</p>
+   <p>From the first sketch of the theme to the last light switched off, we look after décor, flowers, lighting, music, catering and timing, so you can enjoy your own event.</p>
+   <div class="stats"><div><b data-n="500">0</b><span>Events planned</span></div><div><b data-n="12">0</b><span>Years of experience</span></div><div><b data-n="98">0</b><span>% happy clients</span></div></div>
+  </div>
+  <div class="art reveal">
+   <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a0f4d"/><stop offset="1" stop-color="#b4436c"/></linearGradient><radialGradient id="a2"><stop offset="0" stop-color="#f3d98f" stop-opacity=".9"/><stop offset="1" stop-color="#f3d98f" stop-opacity="0"/></radialGradient></defs>
+   <rect width="400" height="500" fill="url(#a1)"/><circle cx="200" cy="170" r="150" fill="url(#a2)"/>
+   <g fill="none" stroke="#d9a94e" stroke-width="3"><path d="M90 500V220a110 110 0 0 1 220 0V500"/><path d="M118 500V225a82 82 0 0 1 164 0V500" opacity=".6"/></g>
+   <g fill="#f3d98f"><circle cx="90" cy="220" r="9"/><circle cx="310" cy="220" r="9"/><circle cx="200" cy="110" r="9"/><circle cx="125" cy="140" r="6"/><circle cx="275" cy="140" r="6"/></g>
+   <g stroke="#f3d98f" stroke-width="1.5"><path d="M60 0v90M120 0v60M200 0v50M280 0v60M340 0v90"/></g>
+   <g fill="#fbf3e4"><circle cx="60" cy="96" r="5"/><circle cx="120" cy="66" r="5"/><circle cx="200" cy="56" r="5"/><circle cx="280" cy="66" r="5"/><circle cx="340" cy="96" r="5"/></g>
+   <ellipse cx="200" cy="480" rx="150" ry="22" fill="#240b36" opacity=".6"/></svg>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="title reveal"><h2>What we plan</h2><p>Every event starts with a conversation and ends with a story your guests keep telling.</p></div>
+  <div class="grid3">
+   <div class="card reveal"><svg viewBox="0 0 48 48"><circle cx="17" cy="28" r="10"/><circle cx="31" cy="28" r="10"/><path d="M24 10l-3-5h6z"/></svg><h3>Weddings</h3><p>Mandaps, stage design, floral arches and a day that flows from ceremony to farewell.</p></div>
+   <div class="card reveal"><svg viewBox="0 0 48 48"><path d="M8 40h32M12 40V24h24v16M10 24h28M24 24V12M24 12c-3-4 3-6 0-9"/></svg><h3>Birthdays and parties</h3><p>Themed décor, balloons, entertainment and cakes for milestone moments of every age.</p></div>
+   <div class="card reveal"><svg viewBox="0 0 48 48"><path d="M6 14h36v22H6zM6 14l18 14 18-14"/></svg><h3>Corporate galas</h3><p>Launches, award nights and family days with sharp production and smooth guest handling.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="wrap">
+  <div class="title reveal"><h2>Moments we have created</h2><p>A glimpse of the styles and settings we love to build.</p></div>
+  <div class="gal reveal">
+   <figure tabindex="0"><svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a1744"/><stop offset="1" stop-color="#d9a94e"/></linearGradient></defs><rect width="600" height="600" fill="url(#g1)"/><g fill="none" stroke="#fbf3e4" stroke-width="3"><path d="M150 600V300a150 150 0 0 1 300 0V600"/></g><g><circle cx="150" cy="300" r="22" fill="#f4a6c0"/><circle cx="450" cy="300" r="22" fill="#f4a6c0"/><circle cx="300" cy="150" r="26" fill="#fbf3e4"/><circle cx="195" cy="205" r="18" fill="#f3d98f"/><circle cx="405" cy="205" r="18" fill="#f3d98f"/><circle cx="170" cy="380" r="16" fill="#fbf3e4"/><circle cx="430" cy="380" r="16" fill="#fbf3e4"/></g><path d="M0 560q150-50 300 0t300 0V600H0z" fill="#240b36" opacity=".5"/></svg><figcaption>Floral wedding arch</figcaption></figure>
+   <figure tabindex="0"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#2e0f4a"/><g stroke="#f3d98f" stroke-width="1.5"><path d="M60 0v90M150 0v60M240 0v100"/></g><circle cx="60" cy="100" r="30" fill="#b4436c"/><circle cx="150" cy="70" r="34" fill="#d9a94e"/><circle cx="240" cy="110" r="30" fill="#f4a6c0"/><circle cx="150" cy="200" r="26" fill="#7a3fb0"/><circle cx="80" cy="220" r="22" fill="#d9a94e"/><circle cx="220" cy="230" r="22" fill="#b4436c"/></svg><figcaption>Birthday balloons</figcaption></figure>
+   <figure tabindex="0"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#170623"/><g fill="#f3d98f"><circle cx="150" cy="60" r="8"/></g><path d="M150 20v34M110 60h80l-20 30h-40z" stroke="#d9a94e" fill="#d9a94e" opacity=".9"/><g fill="#fbf3e4" opacity=".95"><ellipse cx="80" cy="220" rx="50" ry="14"/><ellipse cx="220" cy="220" rx="50" ry="14"/></g><g fill="#b4436c"><rect x="74" y="150" width="12" height="70"/><rect x="214" y="150" width="12" height="70"/></g><g fill="#f3d98f"><circle cx="80" cy="140" r="7"/><circle cx="220" cy="140" r="7"/></g></svg><figcaption>Gala dinner table</figcaption></figure>
+   <figure tabindex="0"><svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e0f4a"/><stop offset="1" stop-color="#8a2a62"/></linearGradient></defs><rect width="600" height="300" fill="url(#g4)"/><g fill="#f3d98f" opacity=".35"><path d="M120 0l-70 300h140z"/><path d="M300 0l-70 300h140z"/><path d="M480 0l-70 300h140z"/></g><rect y="250" width="600" height="50" fill="#170623"/><g fill="#fbf3e4"><circle cx="90" cy="60" r="3"/><circle cx="210" cy="120" r="2"/><circle cx="380" cy="50" r="3"/><circle cx="520" cy="110" r="2"/></g></svg><figcaption>Stage and lighting</figcaption></figure>
+   <figure tabindex="0"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#6b1d50"/><g fill="#fbf3e4" opacity=".9"><path d="M150 250c-60-40-90-90-60-130 30-30 60 0 60 30 0-30 30-60 60-30 30 40 0 90-60 130z" fill="#f4a6c0"/></g><g stroke="#d9a94e" stroke-width="2" fill="none"><path d="M150 250v40M150 270c-20-10-30-5-40 0M150 270c20-10 30-5 40 0"/></g><circle cx="150" cy="120" r="10" fill="#f3d98f"/></svg><figcaption>Floral décor</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap contact">
+  <div class="info reveal">
+   <h2>Let us plan your celebration</h2>
+   <p>Share a few details and we will call you back to talk through your ideas, dates and budget.</p>
+   <div class="row"><i>&#9990;</i><div><b>Phone</b><a href="tel:1234576487">1234576487</a></div></div>
+   <div class="row"><i>&#9906;</i><div><b>Address</b>Ring Road, Hassan</div></div>
+   <div class="row"><i>&#9993;</i><div><b>Visit</b>By appointment, daily 10 am to 7 pm</div></div>
+  </div>
+  <form id="form" class="reveal" novalidate>
+   <div class="fields">
+    <div class="two">
+     <div class="f"><label for="n">Your name</label><input id="n" required><span class="err"></span></div>
+     <div class="f"><label for="p">Phone number</label><input id="p" inputmode="tel" required><span class="err"></span></div>
+    </div>
+    <div class="two">
+     <div class="f"><label for="t">Event type</label><select id="t"><option>Wedding</option><option>Birthday</option><option>Corporate event</option><option>Other</option></select></div>
+     <div class="f"><label for="d">Event date</label><input id="d" type="date"></div>
+    </div>
+    <div class="f"><label for="m">Tell us about your event</label><textarea id="m" rows="4"></textarea></div>
+    <button class="btn" type="submit">Request a callback</button>
+   </div>
+   <div class="ok"><h3>Thank you</h3><p>We have noted your request and will call you soon.</p></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <div><div class="logo">Elite Celebration</div><p style="margin-top:10px;max-width:320px">Creative event planning in Hassan for weddings, parties and gatherings that feel truly yours.</p></div>
+   <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h4>Find us</h4><ul><li>Ring Road, Hassan</li><li><a href="tel:1234576487">1234576487</a></li></ul></div>
+  </div>
+  <div class="copy">&copy; <span id="yr">2026</span> Elite Celebration. All rights reserved.</div>
+ </div>
+</footer>
+
+<script>
+// hero headline: letters rise in one by one
+(function(){var h=document.getElementById('heroTitle'),i=0;
+ function wrap(node){Array.from(node.childNodes).forEach(function(c){
+  if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split('').forEach(function(ch){var s=document.createElement('span');s.textContent=ch===' '?'\u00a0':ch;s.style.animationDelay=(i++*0.04)+'s';f.appendChild(s)});c.replaceWith(f)}
+  else if(c.nodeName!=='BR')wrap(c)})}
+ wrap(h)})();
+
+// header + menu
+var hd=document.querySelector('header'),mn=document.getElementById('menu');
+addEventListener('scroll',function(){hd.classList.toggle('solid',scrollY>40)});
+document.getElementById('burger').onclick=function(){mn.classList.toggle('open')};
+mn.addEventListener('click',function(e){if(e.target.tagName==='A')mn.classList.remove('open')});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// scroll reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+ e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el,k){el.style.transitionDelay=(k%3)*.12+'s';io.observe(el)});
+function count(el){var n=+el.dataset.n,t0=null;(function f(t){t0=t0||t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())}
+
+// golden sparkles
+(function(){var c=document.getElementById('sparkle'),x=c.getContext('2d'),W,H,P=[];
+ function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}size();addEventListener('resize',size);
+ for(var i=0;i<70;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*2.2+.4,s:Math.random()*.0006+.0002,p:Math.random()*6.3});
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){return}
+ (function draw(t){x.clearRect(0,0,W,H);P.forEach(function(q){q.y-=q.s;if(q.y<0)q.y=1;
+  var a=.35+.65*Math.abs(Math.sin(t/900+q.p));x.beginPath();x.arc(q.x*W,q.y*H,q.r,0,6.3);x.fillStyle='rgba(243,217,143,'+a+')';x.shadowColor='#f3d98f';x.shadowBlur=10;x.fill()});
+  requestAnimationFrame(draw)})(0)})();
+
+// form validation
+document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();var ok=true;
+ [['n',function(v){return v.trim().length>1},'Enter your name'],['p',function(v){return /^\d{10}$/.test(v.replace(/\D/g,''))},'Enter a 10-digit phone number']].forEach(function(r){
+  var el=document.getElementById(r[0]),er=el.parentNode.querySelector('.err');
+  if(!r[1](el.value)){er.textContent=r[2];ok=false}else er.textContent=''});
+ if(ok)this.classList.add('sent')});
+</script>
+</body>
+</html>
